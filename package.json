@@ -1,6 +1,6 @@
 {
   "name": "object-recursive-iterator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Iterate recursively over the enumerable properties of an object and execute the given callback on the objects's leafs.",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,7 @@
     "url": "https://github.com/pmatzavin/js-obj-iterator.git"
   },
   "dependencies": {
-    "bluebird": "latest",
-    "should": "latest"
+    "bluebird": "latest"
   },
   "bugs": {
     "url": "https://github.com/pmatzavin/dfa/issues"
