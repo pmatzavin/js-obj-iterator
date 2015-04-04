@@ -1,0 +1,21 @@
+{
+  "name": "object-recursive-iterator",
+  "version": "1.0.0",
+  "description": "Iterate recursively over the enumerable properties of an object and execute the given callback on the objects's leafs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec ./spec/**/*.js"
+  },
+  "keywords": [
+    "object",
+    "iteration",
+    "recursively",
+    "keys"
+  ],
+  "author": "pmatzavin",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "latest",
+    "should": "latest"
+  }
+}
