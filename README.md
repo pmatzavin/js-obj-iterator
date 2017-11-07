@@ -13,7 +13,7 @@ The callback provides handlers to the current object, the current key, and the k
 ## Installation
 
 ```
-npm install
+npm install object-recursive-iterator --save
 ```
 
 ## Module Usage
