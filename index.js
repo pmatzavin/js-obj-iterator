@@ -1,24 +1,37 @@
-var Promise = require('bluebird');
+module.exports = { 
+  forAll
+};
 
-module.exports = { "forAll": forAll };
+function cloneShallowArray(arr) {
+  return arr.slice(0);
+}
 
-function forAll(obj, callback, currentPath) {
+function forAll(
+  obj,
+  callback = () => {},
+  options = {},
+  currentPath = null
+) {
+  const treatArrayAsObject = options.treatArrayAsObject === true;
 
-    if (!currentPath) { currentPath = []; }
+  if (!currentPath) {
+    currentPath = [];
+  }
 
-    if (obj) { Object.keys(obj).forEach(compute); }
+  const shouldApplyCompute = obj && (treatArrayAsObject || !Array.isArray(obj));
+  
+  if (shouldApplyCompute) {
+    Object.keys(obj).forEach(compute);
+  }
 
-    function compute(key) {
-        var value = obj[key];
-        if (typeof value !== 'object') {
-            callback(currentPath, key, obj);
-        } else {
-            var path = currentPath.slice(0);    // clone array
-            path.push(key);
-            forAll(value, callback, path);      // recursion
-        }
+  function compute(key) {
+    const value = obj[key];
+    if (typeof value !== 'object') {
+      callback(currentPath, key, obj);
+    } else {
+      const path = cloneShallowArray(currentPath);
+      path.push(key);
+      forAll(value, callback, options, path);
     }
-
-    return;
-
+  }
 }
