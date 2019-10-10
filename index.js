@@ -1,4 +1,4 @@
-module.exports = { 
+module.exports = {
   forAll
 };
 
@@ -23,6 +23,7 @@ function forAll(
   if (shouldApplyCompute) {
     Object.keys(obj).forEach(compute);
   }
+  return obj;
 
   function compute(key) {
     const value = obj[key];

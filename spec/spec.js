@@ -122,13 +122,15 @@ const tests = [
   }
 ];
 
+const cloneDeepObj = (obj) => JSON.parse(JSON.stringify(obj));
+
 describe('tests', () => {
   tests.forEach((t) => {
     it(t.description, () => {
-      const arg = t.input;
       const { assert, compute, input, options } = t;
-      objectIterator.forAll(input, compute, options);
-      assert(arg);
+      const res = objectIterator.forAll(input, compute, options);
+      cloneDeepObj(res).should.eql(cloneDeepObj(input));
+      assert(input);
     });
   });
 });
