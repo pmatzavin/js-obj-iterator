@@ -1,10 +1,10 @@
 {
   "name": "object-recursive-iterator",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Iterate recursively over the enumerable properties of an object and execute the given callback on the objects's leafs.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec ./spec/**/*.js"
+    "test": "./node_modules/mocha/bin/mocha -R spec ./spec/**/*.js"
   },
   "keywords": [
     "object",
@@ -18,11 +18,11 @@
     "type": "git",
     "url": "https://github.com/pmatzavin/js-obj-iterator.git"
   },
-  "dependencies": {
-    "bluebird": "latest"
-  },
-  "bugs": {
-    "url": "https://github.com/pmatzavin/dfa/issues"
-  },
-  "homepage": "https://github.com/pmatzavin/mdfa"
+  "dependencies": {},
+  "homepage": "https://github.com/pmatzavin/mdfa",
+  "devDependencies": {
+    "mocha": "^6.2.1",
+    "should": "^13.2.3"
+  }
 }
+
