@@ -1,6 +1,6 @@
 {
   "name": "object-recursive-iterator",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Iterate recursively over the enumerable properties of an object and execute the given callback on the objects's leafs.",
   "main": "index.js",
   "scripts": {
@@ -25,4 +25,3 @@
     "should": "^13.2.3"
   }
 }
-
